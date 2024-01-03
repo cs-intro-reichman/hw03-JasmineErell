@@ -10,8 +10,23 @@ public class LowerCase {
     * except that all the upper-case letters are converted to lower-case letters.
     * Non-letter characters are left as is.
     */
-    public static String lowerCase(String s) {
-        // Replace the following statement with your code
-        return null;
+    public static String lowerCase(String s) 
+    {
+        String res = "";
+        for (int i = 0; i< s.length(); i++)
+        {
+            char ch = s.charAt(i);
+            int ascii = ch ;
+            if (ascii>=65 && ascii<=94)
+            {
+                int asciiLow = ascii + 32; 
+                res = res + ((char)asciiLow);
+            }
+            else
+            {
+                res = res + ch;
+            }
+        }
+        return res;
     }
 }
