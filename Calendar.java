@@ -1,7 +1,7 @@
 /** 
  * Prints the calendars of all the years in the 20th century.
  */
-public class Calendar1
+public class Calendar1 
 {	
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
@@ -34,8 +34,10 @@ public class Calendar1
 				System.out.println(dayOfMonth + "/" + month + "/" + year + " " + "Sunday");
 			}
 			debugDaysCounter++;
-			// if(debugDaysCounter == 2000)
-			// {
+				//// If you want to stop the loop after n days, replace the condition of the
+				//// if statement with the condition (debugDaysCounter == n)
+			// if (debugDaysCounter == 2000) 
+			// { 
 			// 	break;
 			// }
 			advance();	
@@ -43,6 +45,18 @@ public class Calendar1
 
 
         }
+	 	//// Write the necessary ending code here
+		// if (dayOfWeek != 1)
+		// {
+		// 	System.out.println(dayOfMonth + "/" + month + "/" + year);
+		// }
+		// else
+		// {
+		// 	System.out.println(dayOfMonth + "/" + month + "/" + year + " " + "Sunday");
+		// }
+		
+	 
+	
 	 // Advances the date (day, month, year) and the day-of-the-week.
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
