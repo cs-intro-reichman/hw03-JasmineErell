@@ -1,7 +1,7 @@
 /** 
  * Prints the calendars of all the years in the 20th century.
  */
-public class Calendar1 
+public class Calendar
 {	
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
@@ -36,10 +36,10 @@ public class Calendar1
 			debugDaysCounter++;
 				//// If you want to stop the loop after n days, replace the condition of the
 				//// if statement with the condition (debugDaysCounter == n)
-			if (debugDaysCounter == 2000) 
-			{ 
-				break;
-			}
+			// if (debugDaysCounter == 2000) 
+			// { 
+			// 	break;
+			// }
 			advance();	
 		}	
 
