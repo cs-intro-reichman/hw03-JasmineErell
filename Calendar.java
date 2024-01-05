@@ -11,8 +11,7 @@ public class Calendar
 	static int nDaysInMonth = 31; // Number of days in January
 	
 	/** 
-	 * Prints the calendars of all the years in the 20th century. Also prints the  
-	 * number of Sundays that occured on the first day of the month during this period.
+	 * Gets a year and prints its calendar
 	 */
 	public static void main(String args[]) {
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
@@ -24,7 +23,7 @@ public class Calendar
 	    //// of the while loop with the necessary condition 
 	 	while (year<=selectedYear)
 		{
-	 		if(year == (selectedYear-1))
+	 		if(year == selectedYear)
 			{
 				if (dayOfWeek != 1)
 				{
@@ -36,31 +35,12 @@ public class Calendar
 				}
 				debugDaysCounter++;
 			}
-		// advance();
-				
-					//// If you want to stop the loop after n days, replace the condition of the
-					//// if statement with the condition (debugDaysCounter == n)
-				// if (debugDaysCounter == 2000) 
-				// { 
-				// 	break;
-				// }
 			advance();	
 		}	
 			
 
-        }
-	 	//// Write the necessary ending code here
-		// if (dayOfWeek != 1)
-		// {
-		// 	System.out.println(dayOfMonth + "/" + month + "/" + year);
-		// }
-		// else
-		// {
-		// 	System.out.println(dayOfMonth + "/" + month + "/" + year + " " + "Sunday");
-		// }
-		
-	 
-	
+	}
+
 	 // Advances the date (day, month, year) and the day-of-the-week.
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
@@ -97,7 +77,7 @@ public class Calendar
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year)
 	{
-		if (year%4 == 0)
+		if((year % 400 == 0) || (year % 100 != 0) && (year % 4 == 0))
 		{
 			return true;
 		}
@@ -111,7 +91,8 @@ public class Calendar
 	// April, June, September, and November have 30 days each.
 	// February has 28 days in a common year, and 29 days in a leap year.
 	// All the other months have 31 days.
-	private static int nDaysInMonth(int month, int year) {
+	public static int nDaysInMonth(int month, int year) 
+	{
 		int num = 0;
 		if(isLeapYear(year))
 		{
@@ -159,7 +140,8 @@ public class Calendar
 				num = 28;
 			}
 		}
-			return num;	
+			return num;			
+		}
 	}
-}
+
 
