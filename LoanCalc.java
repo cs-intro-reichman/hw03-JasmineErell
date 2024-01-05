@@ -4,7 +4,8 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // The computation tolerance (estimation error)
-	static int iterationCounter;    // Monitors the efficiency of the calculation
+	static int iterationCounter ;  
+	static int iterationCounter1 ;   // Monitors the efficiency of the calculation
 	
     /** 
      * Gets the loan data and computes the periodical payment.
@@ -28,7 +29,7 @@ public class LoanCalc {
 		System.out.print("Periodical payment, using bi-section search: ");
 		System.out.printf("%.2f", bisectionSolver(loan, rate, n, epsilon));
 		System.out.println();
-		System.out.println("number of iterations: " + iterationCounter);
+		System.out.println("number of iterations: " + iterationCounter1);
 	}
 	
 	/**
@@ -40,6 +41,7 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon)
 	{  
+		// int iterationCounter = 0;
 		double G = loan/n;
 		int start = 0;
 		int c = 0;
@@ -61,7 +63,6 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
-		int iterationCounter = 0;
 		Double H = loan ;
 		Double L = 0.0 ;
 		Double G = (H+L)/2 ;
@@ -70,12 +71,12 @@ public class LoanCalc {
 			if(endBalance(loan, rate, n, G)*(endBalance(loan, rate, n, L))>0)
 			{
 				L = G ;
-				iterationCounter ++ ;
+				iterationCounter1 ++ ;
 			}
 			else
 			{
 				H = G;
-				iterationCounter ++ ;
+				iterationCounter1 ++ ;
 			}
 			G = (H+L)/2;
 		}
