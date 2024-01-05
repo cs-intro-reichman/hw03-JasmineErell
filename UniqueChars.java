@@ -13,7 +13,7 @@ public class UniqueChars {
     public static String uniqueChars(String s) 
     {
         String res = "";
-        for (int i = 0; i<s.length()-1; i++)
+        for (int i = 0; i<s.length(); i++)
         {
             if (res.indexOf(s.charAt(i)) == -1)
             {
