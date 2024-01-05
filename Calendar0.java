@@ -50,84 +50,84 @@ public class Calendar0 {
 	{
 		int num = 0;
 		if(isLeapYear(year))
+	// 	{
+	// 		if (month == 2 )
+	// 		{
+	// 			num = 29;
+	// 		}
+	// 		else if(month == 4 || month == 6 || month== 9 || month == 11)
+	// 		{
+	// 			num = 31;
+	// 		}
+	// 		else
+	// 		{
+	// 			num = 30;
+	// 		}	
+	// 	}
+	// 	else
+	// 	{
+	// 		if (month == 2 )
+	// 		{
+	// 			num = 28;
+	// 		}
+	// 		else if(month == 4 || month == 6 || month== 9 || month == 11)
+	// 		{
+	// 			num = 31;
+	// 		}
+	// 		else
+	// 		{
+	// 			num = 30;
+	// 		}	
+	// 	}
+	// 	return num;
+	// }
 		{
-			if (month == 2 )
+			if(month<=7 && month%2==1)
+			{
+				num = 31;
+			}
+			else if (month<=7 && month%2==0 && month != 2)
+			{
+				num = 30;
+			}
+			else if (month>=8 && month%2==0)
+			{
+				num = 31;
+			}
+			else if(month>=8 && month%2==1)
+			{
+				num = 30;
+			}
+			else
 			{
 				num = 29;
 			}
-			else if(month == 4 || month == 6 || month== 9 || month == 11)
-			{
-				num = 31;
-			}
-			else
-			{
-				num = 30;
-			}	
 		}
 		else
 		{
-			if (month == 2 )
-			{
-				num = 28;
-			}
-			else if(month == 4 || month == 6 || month== 9 || month == 11)
+			if(month<=7 && month%2==1)
 			{
 				num = 31;
 			}
-			else
+			else if (month<=7 && month%2==0 && month != 2)
 			{
 				num = 30;
-			}	
+			}
+			else if (month>=8 && month%2==0)
+			{
+				num = 31;
+			}
+			else if(month>=8 && month%2==1)
+			{
+				num = 30;
+			}
+			else
+			{
+				num = 28;
+			}
 		}
-		return num;
-	}
-		// {
-		// 	if(month<=7 && month%2==1)
-		// 	{
-		// 		num = 31;
-		// 	}
-		// 	else if (month<=7 && month%2==0 && month != 2)
-		// 	{
-		// 		num = 30;
-		// 	}
-		// 	else if (month>=8 && month%2==0)
-		// 	{
-		// 		num = 31;
-		// 	}
-		// 	else if(month>=8 && month%2==1)
-		// 	{
-		// 		num = 30;
-		// 	}
-		// 	else
-		// 	{
-		// 		num = 29;
-		// 	}
-		// }
-		// else
-		// {
-		// 	if(month<=7 && month%2==1)
-		// 	{
-		// 		num = 31;
-		// 	}
-		// 	else if (month<=7 && month%2==0 && month != 2)
-		// 	{
-		// 		num = 30;
-		// 	}
-		// 	else if (month>=8 && month%2==0)
-		// 	{
-		// 		num = 31;
-		// 	}
-		// 	else if(month>=8 && month%2==1)
-		// 	{
-		// 		num = 30;
-		// 	}
-		// 	else
-		// 	{
-		// 		num = 28;
-		// 	}
-		// }
-		// 	return num;			
-		// }
+			return num;			
+		}
 	}
 
 
